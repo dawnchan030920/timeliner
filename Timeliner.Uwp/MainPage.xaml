@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="Timeliner.Uwp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Timeliner.Uwp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <muxc:NavigationView x:Name="MainNav" BackRequested="MainNav_BackRequested" IsBackEnabled="True" ItemInvoked="MainNav_ItemInvoked" PaneDisplayMode="Top">
+            <muxc:NavigationView.MenuItems>
+                <muxc:NavigationViewItem Content="事件" Tag="Event" x:Name="EventItem" Icon="Pictures"/>
+                <muxc:NavigationViewItem Content="纪元" Tag="Era" x:Name="EraItem" Icon="DockBottom"/>
+                <muxc:NavigationViewItem Content="组" Tag="Group" x:Name="GroupItem" Icon="Tag"/>
+                <muxc:NavigationViewItem Content="查询" Tag="Query" x:Name="QueryItem">
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE773;"/>
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+            </muxc:NavigationView.MenuItems>
+
+            <muxc:NavigationView.AutoSuggestBox>
+                <AutoSuggestBox QueryIcon="Find" PlaceholderText="查找年代尺元素"/>
+            </muxc:NavigationView.AutoSuggestBox>
+
+            <muxc:NavigationView.PaneCustomContent>
+                <CommandBar Background="Transparent" DefaultLabelPosition="Right">
+                    <AppBarButton Icon="Play" Label="放映全部"/>
+                    <AppBarSeparator/>
+                    <AppBarButton Label="导出">
+                        <AppBarButton.Icon>
+                            <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xEDE1;"/>
+                        </AppBarButton.Icon>
+                    </AppBarButton>
+                    <AppBarButton Icon="OpenFile" Label="打开"/>
+                    <AppBarButton Icon="Save" Label="保存"/>
+                </CommandBar>
+            </muxc:NavigationView.PaneCustomContent>
+            
+            <Frame x:Name="ContentFrame"/>
+        </muxc:NavigationView>
+    </Grid>
+</Page>
