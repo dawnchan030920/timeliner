@@ -11,8 +11,14 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <wct:ListDetailsView>
-            
+        <wct:ListDetailsView BackButtonBehavior="Automatic" CompactModeThresholdWidth="500">
+            <wct:ListDetailsView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="0,8">
+                        
+                    </StackPanel>
+                </DataTemplate>
+            </wct:ListDetailsView.ItemTemplate>
         </wct:ListDetailsView>
     </Grid>
 </Page>
