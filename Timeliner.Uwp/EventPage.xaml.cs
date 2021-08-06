@@ -23,6 +23,8 @@ namespace Timeliner.Uwp
     /// </summary>
     public sealed partial class EventPage : Page
     {
+
+
         public EventPage()
         {
             this.InitializeComponent();
